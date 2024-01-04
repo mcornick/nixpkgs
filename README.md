@@ -27,3 +27,5 @@ and/or add to `/etc/nixos/configuration.nix`:
   };
 }
 ```
+
+and then `nix-env -iA nixos.mcornick.clilol`
