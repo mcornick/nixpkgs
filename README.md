@@ -1,9 +1,29 @@
-# Mark's NUR
+# Mark's nixpkgs
 
-This is a [Nix User Repository](https://nur.nix-community.org/) for software I have written. It is automatically maintained by [GoReleaser](https://goreleaser.com/).
-
-This is (as of January 2024) a work in progress. Stay tuned for improvements.
+This is a [Nix](https://nixos.org/) repository for software I have written. It is automatically maintained by [GoReleaser](https://goreleaser.com/).
 
 ## Usage
 
-TBC
+Add to `~/.config/nixpkgs/config.nix`:
+
+```
+{
+  packageOverrides = pkgs: {
+    mcornick = import (builtins.fetchGit { url = "https://git.sr.ht/~mcornick/nixpkgs"; }) {
+      inherit pkgs;
+    };
+  };
+}
+```
+
+and/or add to `/etc/nixos/configuration.nix`:
+
+```
+{
+  nixpkgs.config.packageOverrides = pkgs: {
+    mcornick = import (builtins.fetchGit { url = "https://git.sr.ht/~mcornick/nixpkgs"; }) {
+      inherit pkgs;
+    };
+  };
+}
+```
