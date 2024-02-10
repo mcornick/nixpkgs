@@ -9,7 +9,7 @@ Add to `~/.config/nixpkgs/config.nix`:
 ```
 {
   packageOverrides = pkgs: {
-    mcornick = import (builtins.fetchGit { url = "https://git.sr.ht/~mcornick/nixpkgs"; }) {
+    mcornick = import (builtins.fetchGit { url = "https://github.com/mcornick/nixpkgs.git"; }) {
       inherit pkgs;
     };
   };
@@ -21,7 +21,7 @@ and/or add to `/etc/nixos/configuration.nix`:
 ```
 {
   nixpkgs.config.packageOverrides = pkgs: {
-    mcornick = import (builtins.fetchGit { url = "https://git.sr.ht/~mcornick/nixpkgs"; }) {
+    mcornick = import (builtins.fetchGit { url = "https://github.com/mcornick/nixpkgs.git"; }) {
       inherit pkgs;
     };
   };
