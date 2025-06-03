@@ -4,28 +4,13 @@ This is a [Nix](https://nixos.org/) repository for software I have written. It i
 
 ## Usage
 
-Add to `~/.config/nixpkgs/config.nix`:
+Add to your NixOS or Home Manager `flake.nix`:
 
 ```
-{
-  packageOverrides = pkgs: {
-    mcornick = import (builtins.fetchGit { url = "https://github.com/mcornick/nixpkgs.git"; }) {
-      inherit pkgs;
-    };
-  };
-}
+inputs.mcornick = {
+  url = "github:mcornick/nixpkgs";
+  inputs.nixpkgs.follows = "nixpkgs";
+};
 ```
 
-and/or add to `/etc/nixos/configuration.nix`:
-
-```
-{
-  nixpkgs.config.packageOverrides = pkgs: {
-    mcornick = import (builtins.fetchGit { url = "https://github.com/mcornick/nixpkgs.git"; }) {
-      inherit pkgs;
-    };
-  };
-}
-```
-
-and then `nix-env -iA nixos.mcornick.clilol`
+Then to install `clilol` on a `x86_64-linux` system, add  `mcornick.packages.x86_64-linux.clilol` to (for instance) `environment.systemPackages` in your NixOS configuration, or to `home.packages` in your Home Manager configuration. If you're not on a `x86_64-linux` system, use your platform type instead.
