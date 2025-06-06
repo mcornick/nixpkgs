@@ -9,26 +9,26 @@ system ? builtins.currentSystem
 }:
 let
   shaMap = {
-    i686-linux = "0mccgk2bl1f9j93kdlcz5j0nv24lyrpv8f8dgn15xaja5lsky10m";
-    x86_64-linux = "18rdk7g2hzahqa4hi4w5lzs7mw4w7f070x2wlygak3jd1ggcb94k";
-    armv6l-linux = "19y1j83l5gdh1y7pahmfhx3x4s1d9nr5a7bxgvw112rm5pa4pdwx";
-    aarch64-linux = "00sqyaz152pq7vcymhspw7a0bglpq11makpapwfq8w15fdvd1q2k";
-    x86_64-darwin = "1hwjlmgmjvqhcyql070i235x9drg6aa7irxrpdhcdrg8w6f4k0wf";
-    aarch64-darwin = "1hwjlmgmjvqhcyql070i235x9drg6aa7irxrpdhcdrg8w6f4k0wf";
+    i686-linux = "0mddvlqz9dv4hpx9h0g1izqdc9wv4mhzwfw6bi9nc6zdl61xihcv";
+    x86_64-linux = "075pm2k4xy44hs659yrn41wal5jhmifmbl7s6napiq72mwg97rmj";
+    armv6l-linux = "1z17py6mqhbh03f3ri727pad4d323b20svv9a8nmhf2i4bg17537";
+    aarch64-linux = "19zmfxdx0w2amw40x01g0l1r1xfzmq9k7p9y2ahh7fqk289579sl";
+    x86_64-darwin = "1rhis7w4r7288s4ayc831pdl5krjwqcw7czb3580x96w64dfl8hn";
+    aarch64-darwin = "1rhis7w4r7288s4ayc831pdl5krjwqcw7czb3580x96w64dfl8hn";
   };
 
   urlMap = {
-    i686-linux = "https://github.com/mcornick/clilol/releases/download/v1.0.24/clilol_1.0.24_linux_386.tar.gz";
-    x86_64-linux = "https://github.com/mcornick/clilol/releases/download/v1.0.24/clilol_1.0.24_linux_amd64.tar.gz";
-    armv6l-linux = "https://github.com/mcornick/clilol/releases/download/v1.0.24/clilol_1.0.24_linux_armv6.tar.gz";
-    aarch64-linux = "https://github.com/mcornick/clilol/releases/download/v1.0.24/clilol_1.0.24_linux_arm64.tar.gz";
-    x86_64-darwin = "https://github.com/mcornick/clilol/releases/download/v1.0.24/clilol_1.0.24_darwin_all.tar.gz";
-    aarch64-darwin = "https://github.com/mcornick/clilol/releases/download/v1.0.24/clilol_1.0.24_darwin_all.tar.gz";
+    i686-linux = "https://github.com/mcornick/clilol/releases/download/v1.0.27/clilol_1.0.27_linux_386.tar.gz";
+    x86_64-linux = "https://github.com/mcornick/clilol/releases/download/v1.0.27/clilol_1.0.27_linux_amd64.tar.gz";
+    armv6l-linux = "https://github.com/mcornick/clilol/releases/download/v1.0.27/clilol_1.0.27_linux_armv6.tar.gz";
+    aarch64-linux = "https://github.com/mcornick/clilol/releases/download/v1.0.27/clilol_1.0.27_linux_arm64.tar.gz";
+    x86_64-darwin = "https://github.com/mcornick/clilol/releases/download/v1.0.27/clilol_1.0.27_darwin_all.tar.gz";
+    aarch64-darwin = "https://github.com/mcornick/clilol/releases/download/v1.0.27/clilol_1.0.27_darwin_all.tar.gz";
   };
 in
 stdenvNoCC.mkDerivation {
   pname = "clilol";
-  version = "1.0.24";
+  version = "1.0.27";
   src = fetchurl {
     url = urlMap.${system};
     sha256 = shaMap.${system};
