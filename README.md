@@ -1,4 +1,4 @@
-# Mark's nixpkgs
+# M Cornick's nixpkgs
 
 This is a [Nix](https://nixos.org/) repository for software I have written. It is automatically maintained by [GoReleaser](https://goreleaser.com/).
 
